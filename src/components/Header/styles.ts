@@ -23,6 +23,10 @@ export const HeaderContainer = styled.header`
       opacity: 0.7;
     }
 
+    a:visited {
+      color: #9d9d9d;
+    }
+
     li {
       display: flex;
       align-items: center;

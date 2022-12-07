@@ -1,4 +1,3 @@
-
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
@@ -29,7 +28,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a:visited{
-    color: #9D9D9D;
+    color: #9d9d9d;
   }
 
   li{
