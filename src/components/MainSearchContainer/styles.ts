@@ -81,6 +81,7 @@ export const Background = styled.div`
     }
   }
   @media (max-height: 500px) {
+    height: 50vh;
     margin-top: 0;
     h2 {
       margin-top: 0vh;
