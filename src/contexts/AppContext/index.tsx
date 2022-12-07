@@ -31,6 +31,7 @@ export function AppContextProvider({ children }: MyProviderProps) {
   const [newProducts, setNewProducts] = useState<IProducts[]>([])
   const [filteredProducts, setFilteredProducts] = useState<IProducts[]>([])
   const [categoryOption, setCategoryOption] = useState('')
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false)
 
   console.log(`category option ${categoryOption}`)
 
@@ -42,6 +43,7 @@ export function AppContextProvider({ children }: MyProviderProps) {
   }, [data])
   useEffect(() => filterProducts(), [query, categoryOption])
   useEffect(() => setQuery(''), [categoryOption])
+  useEffect(() => setIsNavbarOpen(false), [categoryOption])
 
   console.log(`query: ${query}`)
 
@@ -92,6 +94,8 @@ export function AppContextProvider({ children }: MyProviderProps) {
         filteredProducts,
         handleKeyPress,
         setCategoryOption,
+        setIsNavbarOpen,
+        isNavbarOpen,
       }}
     >
       {children}

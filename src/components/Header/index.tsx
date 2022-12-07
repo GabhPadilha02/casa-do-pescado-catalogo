@@ -7,12 +7,21 @@ import {
   TextLinksContainer,
 } from './styles'
 import Logo from '../../assets/logo.svg'
+import { useContext } from 'react'
+import { AppContext } from '../../contexts/AppContext'
 
 export function Header() {
+  const { setIsNavbarOpen, isNavbarOpen } = useContext(AppContext)
   return (
     <HeaderContainer>
       <nav>
-        <Check type="checkbox" id="check" />
+        <Check
+          type="checkbox"
+          id="check"
+          value={isNavbarOpen}
+          onChange={(e) => setIsNavbarOpen(true)}
+          checked={isNavbarOpen}
+        />
         <CheckBtn htmlFor="check">
           <List color="#1B5785" size={32} />
         </CheckBtn>

@@ -70,13 +70,21 @@ export const Background = styled.div`
   }
   @media (max-width: 400px) {
     width: 90vw;
-    height: 75vh;
+    height: 45vh;
     h2 {
       width: 70vw;
       font-size: 1.2rem;
       margin-top: 1vh;
       span {
         font-size: 1.5rem;
+      }
+    }
+  }
+  @media (max-height: 450px) {
+    h2 {
+      font-size: 1rem;
+      span {
+        font-size: 1.2rem;
       }
     }
   }
