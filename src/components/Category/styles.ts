@@ -40,7 +40,7 @@ export const CategoryContainer = styled.div`
   }
   @media (max-width: 400px) {
     form {
-      gap: 5vw;
+      gap: 3vw;
     }
   }
 `
@@ -100,13 +100,13 @@ export const RadioContainer = styled.div`
       }
     }
   }
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     img {
-      width: 40px;
+      width: 30px;
     }
     label {
       span {
-        font-size: 0.675rem;
+        font-size: 0.475rem;
       }
     }
   }
