@@ -1,0 +1,12 @@
+query GetProducts {
+  products{
+    title
+    subtitle
+    weight
+    imageOfProduct {
+      url
+      id
+    }
+    category
+  }
+}
