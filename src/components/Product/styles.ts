@@ -22,8 +22,8 @@ export const ProductItem = styled.div`
   align-items: center;
   justify-content: start;
   padding: 2rem;
-  width: 220px;
-  height: 270px;
+  width: 200px;
+  max-height: 240px;
   background-color: #ffffff;
   /* background-image: url('https://www.transparenttextures.com/patterns/az-subtle.png'); */
   border-radius: 8px;
@@ -59,6 +59,7 @@ export const TextContainer = styled.div`
   gap: 0.1rem;
   max-height: 200px;
   max-width: 220px;
+  text-align: center;
   align-items: center;
   color: #736b6b;
 

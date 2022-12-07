@@ -116,11 +116,11 @@ export const SearchInput = styled.label`
     border-radius: 999px;
     padding: 1rem 4rem;
     color: #ffffff;
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 700;
     ::placeholder {
       color: #ffffff;
-      font-size: 0.875rem;
+      font-size: 1rem;
     }
   }
 
@@ -147,9 +147,9 @@ export const SearchInput = styled.label`
     input {
       height: 40px;
       width: 45vw;
-      font-size: 0.6rem;
+      font-size: 1rem;
       ::placeholder {
-        font-size: 0.6rem;
+        font-size: 1rem;
       }
     }
     button {

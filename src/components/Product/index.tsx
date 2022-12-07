@@ -18,7 +18,7 @@ export function Product() {
         <ProductItem key={a.title}>
           <ProductInfosContainer>
             {a.imageOfProduct.map((i: any) => (
-              <img src={i.url} key={i.url} alt="" width={200} />
+              <img src={i.url} key={i.url} alt="" width={150} />
             ))}
             <TextContainer>
               <h2 key={a.title}>{a.title}</h2>
