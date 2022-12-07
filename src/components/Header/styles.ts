@@ -40,7 +40,7 @@ export const HeaderContainer = styled.header`
       color: #9d9d9d;
     }
   }
-  @media (max-width: 450px) {
+  @media (max-width: 600px) {
     nav {
       justify-content: center;
       gap: 10vw;
@@ -128,6 +128,29 @@ export const Check = styled.input`
 `
 
 export const CheckBtn = styled.label`
+  display: none;
+
+  @media (max-width: 880px) {
+    display: flex;
+    flex-direction: column;
+  }
+`
+export const Close = styled.input`
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+
+  @media (max-width: 880px) {
+    &:checked ~ ul {
+      left: 0;
+    }
+  }
+`
+export const CloseBtn = styled.label`
   display: none;
 
   @media (max-width: 880px) {

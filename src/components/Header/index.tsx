@@ -1,7 +1,9 @@
-import { FacebookLogo, InstagramLogo, List } from 'phosphor-react'
+import { FacebookLogo, InstagramLogo, List, X } from 'phosphor-react'
 import {
   Check,
   CheckBtn,
+  Close,
+  CloseBtn,
   HeaderContainer,
   IconsContainer,
   TextLinksContainer,
@@ -25,18 +27,25 @@ export function Header() {
         <CheckBtn htmlFor="check">
           <List color="#1B5785" size={32} />
         </CheckBtn>
+
         <a href="/">
           <img src={Logo} alt="Logo" width={100} />
         </a>
         <TextLinksContainer>
           <li>
-            <a href="/">Início</a>
+            <a href="/" onChange={(e) => setIsNavbarOpen(false)}>
+              Início
+            </a>
           </li>
           <li>
-            <a href="#categories">Categorias</a>
+            <a href="#categories" onClick={(e) => setIsNavbarOpen(false)}>
+              Categorias
+            </a>
           </li>
           <li>
-            <a href="#products">Produtos</a>
+            <a href="#products" onClick={(e) => setIsNavbarOpen(false)}>
+              Produtos
+            </a>
           </li>
         </TextLinksContainer>
         <IconsContainer>
@@ -59,6 +68,22 @@ export function Header() {
             </li>
           </a>
         </IconsContainer>
+        {isNavbarOpen === true ? (
+          <>
+            <Close
+              type="checkbox"
+              id="close"
+              value={isNavbarOpen}
+              onChange={(e) => setIsNavbarOpen(false)}
+              checked={isNavbarOpen}
+            />
+            <CloseBtn htmlFor="close">
+              <X color="#1B5785" size={32} />
+            </CloseBtn>
+          </>
+        ) : (
+          <></>
+        )}
       </nav>
     </HeaderContainer>
   )
