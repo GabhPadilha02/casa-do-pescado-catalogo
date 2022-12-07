@@ -23,6 +23,10 @@ export const HeaderContainer = styled.header`
       opacity: 0.7;
     }
 
+    a:link {
+      color: #9d9d9d;
+    }
+
     a:visited {
       color: #9d9d9d;
     }
@@ -38,6 +42,7 @@ export const HeaderContainer = styled.header`
   @media (max-width: 450px) {
     nav {
       justify-content: center;
+      gap: 10vw;
     }
   }
 `
