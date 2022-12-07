@@ -21,13 +21,15 @@ export const CategoryContainer = styled.div`
     align-items: flex-end;
   }
   @media (max-width: 700px) {
-    margin-top: 50px;
+    margin-top: 20px;
     form {
       gap: 3vw;
+      max-height: 100px;
     }
     h2 {
       margin-left: 0;
       text-align: center;
+      position: relative;
     }
   }
   @media (max-width: 850px) {
@@ -83,12 +85,10 @@ export const RadioContainer = styled.div`
   }
 
   @media (max-width: 700px) {
-    width: 100vw;
     img {
       width: 50px;
     }
     label {
-      /* height: 50px; */
       width: 50px;
       span {
         font-size: 0.875rem;

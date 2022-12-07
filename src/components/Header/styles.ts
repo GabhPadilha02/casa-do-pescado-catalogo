@@ -37,6 +37,7 @@ export const HeaderContainer = styled.header`
       justify-content: space-between;
       font-size: 1rem;
       font-weight: 700;
+      color: #9d9d9d;
     }
   }
   @media (max-width: 450px) {
