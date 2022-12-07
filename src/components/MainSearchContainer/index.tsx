@@ -5,7 +5,8 @@ import { AppContext } from '../../contexts/AppContext'
 import { Background, BackgroundContainer, SearchInput } from './styles'
 
 export function MainSearchContainer() {
-  const { query, setQuery, handleKeyPress } = useContext(AppContext)
+  const { query, setQuery, handleKeyPress, isNavbarOpen } =
+    useContext(AppContext)
   return (
     <BackgroundContainer>
       <Background>
@@ -14,19 +15,25 @@ export function MainSearchContainer() {
           <span>NO ATACADO E VAREJO</span>
         </h2>
         <SearchInput>
-          <MagnifyingGlass size={30} />
-          <input
-            type="search"
-            placeholder={'BUSQUE POR PRODUTOS'}
-            name="searchProducts"
-            id="searchProducts"
-            value={query}
-            onKeyPress={(event) => handleKeyPress(event)}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <a href="#products">
-            <button id="searchProducts">BUSCAR</button>
-          </a>
+          {isNavbarOpen === true ? (
+            <></>
+          ) : (
+            <>
+              <MagnifyingGlass size={30} />
+              <input
+                type="search"
+                placeholder={'BUSQUE POR PRODUTOS'}
+                name="searchProducts"
+                id="searchProducts"
+                value={query}
+                onKeyPress={(event) => handleKeyPress(event)}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+              <a href="#products">
+                <button id="searchProducts">BUSCAR</button>
+              </a>
+            </>
+          )}
         </SearchInput>
       </Background>
     </BackgroundContainer>
