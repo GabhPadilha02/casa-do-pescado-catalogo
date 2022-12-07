@@ -76,6 +76,12 @@ export function AppContextProvider({ children }: MyProviderProps) {
       )
     }
 
+    if (categoryOption === 'fishBaked') {
+      return setFilteredProducts(
+        newProducts.filter((product) => product.category === 'Assados'),
+      )
+    }
+
     return setFilteredProducts(newFilteredProducts)
   }
 

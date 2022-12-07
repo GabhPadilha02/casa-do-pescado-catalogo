@@ -38,6 +38,11 @@ export const CategoryContainer = styled.div`
       padding: 10px 50px;
     }
   }
+  @media (max-width: 400px) {
+    form {
+      gap: 5vw;
+    }
+  }
 `
 
 export const RadioContainer = styled.div`

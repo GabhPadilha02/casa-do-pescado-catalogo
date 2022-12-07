@@ -1,6 +1,7 @@
 import fish from '../../assets/fish.svg'
 import shrimp from '../../assets/shrimp.svg'
 import portions from '../../assets/portions.svg'
+import fishBaked from '../../assets/baked.png'
 import { CategoryContainer, RadioContainer } from './styles'
 import { useContext } from 'react'
 import { AppContext } from '../../contexts/AppContext'
@@ -67,6 +68,21 @@ export function Category() {
               name="category"
               id="fish"
               value="fish"
+              onChange={(e) => {
+                setCategoryOption(e.target.value)
+              }}
+            />
+          </label>
+        </RadioContainer>
+        <RadioContainer>
+          <label htmlFor="fish">
+            <img src={fishBaked} alt="Assados/Caldos" width={80} />
+            <span>Assados/Caldos</span>
+            <input
+              type="radio"
+              name="category"
+              id="fishBaked"
+              value="fishBaked"
               onChange={(e) => {
                 setCategoryOption(e.target.value)
               }}

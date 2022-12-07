@@ -4,10 +4,10 @@ export const ProductContainer = styled.div`
   margin-top: 6rem;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: center;
   padding: 3rem;
-  gap: 2rem;
+  gap: 3rem;
 
   @media (max-width: 700px) {
     margin-top: 6rem;
@@ -25,15 +25,15 @@ export const ProductItem = styled.div`
   width: 200px;
   max-height: 240px;
   background-color: #ffffff;
-  /* background-image: url('https://www.transparenttextures.com/patterns/az-subtle.png'); */
+  background-image: url('https://www.transparenttextures.com/patterns/az-subtle.png');
   border-radius: 8px;
   -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
 
   @media (max-width: 700px) {
-    width: 120px;
-    height: 160px;
+    width: 180px;
+    height: 220px;
   }
 `
 
@@ -41,14 +41,18 @@ export const ProductInfosContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  bottom: 9rem;
+  bottom: 7rem;
   align-items: center;
   justify-content: center;
 
+  img {
+    height: 140px;
+  }
+
   @media (max-width: 700px) {
-    bottom: 8rem;
+    bottom: 5rem;
     img {
-      width: 120px;
+      height: 80px;
     }
   }
 `
@@ -60,21 +64,24 @@ export const TextContainer = styled.div`
   max-height: 200px;
   max-width: 220px;
   text-align: center;
+  justify-content: end;
   align-items: center;
-  color: #736b6b;
+  color: #9d9d9d;
+  margin-top: 1rem;
 
   h2 {
     font-size: 1.27rem;
+    color: #9d9d9d;
   }
 
   @media (max-width: 700px) {
     text-align: center;
-    max-width: 100px;
+    width: 150px;
     position: relative;
-    bottom: 1rem;
+    top: 0rem;
 
     h2 {
-      font-size: 0.875rem;
+      font-size: 1.2rem;
     }
   }
 `
@@ -85,7 +92,6 @@ export const Description = styled.span`
   left: 0;
   width: 80%;
   font-weight: 700;
-  color: #8c8383;
   font-size: 0.9rem;
 
   @media (max-width: 700px) {
