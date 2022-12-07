@@ -33,7 +33,7 @@ export const ProductItem = styled.div`
 
   @media (max-width: 700px) {
     width: 150px;
-    height: 200px;
+    height: 180px;
   }
 `
 
@@ -72,11 +72,12 @@ export const TextContainer = styled.div`
   h2 {
     font-size: 1.27rem;
     color: #9d9d9d;
+    height: 40px;
   }
 
   @media (max-width: 700px) {
     text-align: center;
-    width: 150px;
+    width: 130px;
     position: relative;
     top: 0rem;
 

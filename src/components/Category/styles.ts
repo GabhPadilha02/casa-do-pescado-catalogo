@@ -23,7 +23,7 @@ export const CategoryContainer = styled.div`
   @media (max-width: 700px) {
     margin-top: 20px;
     form {
-      gap: 3vw;
+      gap: 2vw;
       max-height: 100px;
     }
     h2 {
