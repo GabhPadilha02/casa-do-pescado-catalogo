@@ -34,12 +34,20 @@ export const Background = styled.div`
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    margin-top: 20vh;
+    margin-top: 15vh;
     font-weight: 700;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
 
     span {
       font-size: 2.6rem;
+    }
+  }
+  @media (max-width: 1200px) {
+    h2 {
+      font-size: 1.5rem;
+      span {
+        font-size: 2.2rem;
+      }
     }
   }
 
@@ -62,9 +70,14 @@ export const Background = styled.div`
   }
   @media (max-width: 400px) {
     width: 90vw;
-    height: 38vh;
+    height: 75vh;
     h2 {
-      margin-top: 3vh;
+      width: 70vw;
+      font-size: 1.2rem;
+      margin-top: 1vh;
+      span {
+        font-size: 1.5rem;
+      }
     }
   }
 `
