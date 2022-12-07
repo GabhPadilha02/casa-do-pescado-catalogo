@@ -80,8 +80,10 @@ export const Background = styled.div`
       }
     }
   }
-  @media (max-height: 450px) {
+  @media (max-height: 500px) {
+    margin-top: 0;
     h2 {
+      margin-top: 0vh;
       font-size: 1rem;
       span {
         font-size: 1.2rem;
