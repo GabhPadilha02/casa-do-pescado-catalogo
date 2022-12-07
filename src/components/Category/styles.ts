@@ -40,7 +40,7 @@ export const CategoryContainer = styled.div`
   }
   @media (max-width: 400px) {
     form {
-      gap: 3vw;
+      gap: 1vw;
     }
   }
 `
