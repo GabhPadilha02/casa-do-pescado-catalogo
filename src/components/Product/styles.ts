@@ -144,6 +144,7 @@ export const Model = styled.div`
     padding: 20px 0 20px;
     margin: 0 auto;
     max-height: 70vh;
+    max-width: 90vw;
   }
 `
 
