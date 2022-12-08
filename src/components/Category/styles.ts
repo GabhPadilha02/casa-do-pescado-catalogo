@@ -34,7 +34,7 @@ export const CategoryContainer = styled.div`
   }
   @media (max-width: 850px) {
     form {
-      gap: 10vw;
+      gap: 5vw;
       padding: 10px 50px;
     }
   }

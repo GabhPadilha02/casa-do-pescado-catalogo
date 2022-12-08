@@ -27,7 +27,7 @@ export function Product() {
   return (
     <>
       {model ? (
-        <ModelOpen>
+        <ModelOpen onClick={() => setModel(false)}>
           <img src={tempImgSrc} alt="Model" />
           <X onClick={() => setModel(false)} />
         </ModelOpen>
