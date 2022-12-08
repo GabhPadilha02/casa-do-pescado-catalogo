@@ -23,7 +23,7 @@ export const ProductItem = styled.div`
   justify-content: start;
   padding: 2rem;
   width: 200px;
-  max-height: 240px;
+  max-height: 260px;
   background-color: #ffffff;
   background-image: url('https://www.transparenttextures.com/patterns/az-subtle.png');
   border-radius: 8px;
@@ -33,7 +33,7 @@ export const ProductItem = styled.div`
 
   @media (max-width: 700px) {
     width: 150px;
-    height: 180px;
+    height: 200px;
   }
 `
 
@@ -72,7 +72,7 @@ export const TextContainer = styled.div`
   h2 {
     font-size: 1.27rem;
     color: #9d9d9d;
-    height: 40px;
+    height: 70px;
   }
 
   @media (max-width: 700px) {
