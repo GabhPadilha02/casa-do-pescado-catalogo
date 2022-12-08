@@ -32,7 +32,7 @@ export function Category() {
         <RadioContainer>
           <label htmlFor="portions">
             <img src={portions} alt="Porções" width={100} />
-            <span>Empanados</span>
+            <span>Porções</span>
             <input
               type="radio"
               name="category"
