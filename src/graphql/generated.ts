@@ -82,6 +82,7 @@ export type AssetCreatedAtArgs = {
 
 /** Asset system model */
 export type AssetCreatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -107,6 +108,7 @@ export type AssetImageOfProductProductArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   last?: InputMaybe<Scalars['Int']>;
   locales?: InputMaybe<Array<Locale>>;
   orderBy?: InputMaybe<ProductOrderByInput>;
@@ -130,6 +132,7 @@ export type AssetPublishedAtArgs = {
 
 /** Asset system model */
 export type AssetPublishedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -139,6 +142,7 @@ export type AssetScheduledInArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   last?: InputMaybe<Scalars['Int']>;
   locales?: InputMaybe<Array<Locale>>;
   skip?: InputMaybe<Scalars['Int']>;
@@ -154,6 +158,7 @@ export type AssetUpdatedAtArgs = {
 
 /** Asset system model */
 export type AssetUpdatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -711,6 +716,7 @@ export type BatchPayload = {
 
 /** category of products  */
 export enum Category {
+  Assados = 'Assados',
   Camarao = 'Camarao',
   Pescados = 'Pescados',
   Porcoes = 'Porcoes'
@@ -1263,7 +1269,7 @@ export type PageInfo = {
 /** Products */
 export type Product = Node & {
   __typename?: 'Product';
-  category: Array<Category>;
+  category?: Maybe<Category>;
   /** The time the document was created */
   createdAt: Scalars['DateTime'];
   /** User that created this document */
@@ -1294,6 +1300,7 @@ export type Product = Node & {
 
 /** Products */
 export type ProductCreatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -1319,6 +1326,7 @@ export type ProductImageOfProductArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   last?: InputMaybe<Scalars['Int']>;
   locales?: InputMaybe<Array<Locale>>;
   orderBy?: InputMaybe<AssetOrderByInput>;
@@ -1329,6 +1337,7 @@ export type ProductImageOfProductArgs = {
 
 /** Products */
 export type ProductPublishedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -1338,6 +1347,7 @@ export type ProductScheduledInArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   last?: InputMaybe<Scalars['Int']>;
   locales?: InputMaybe<Array<Locale>>;
   skip?: InputMaybe<Scalars['Int']>;
@@ -1347,6 +1357,7 @@ export type ProductScheduledInArgs = {
 
 /** Products */
 export type ProductUpdatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -1368,7 +1379,7 @@ export type ProductConnection = {
 };
 
 export type ProductCreateInput = {
-  category?: InputMaybe<Array<Category>>;
+  category?: InputMaybe<Category>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   imageOfProduct: AssetCreateManyInlineInput;
   subtitle?: InputMaybe<Scalars['String']>;
@@ -1410,16 +1421,13 @@ export type ProductManyWhereInput = {
   OR?: InputMaybe<Array<ProductWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
-  /** Matches if the field array contains *all* items provided to the filter and order does match */
-  category?: InputMaybe<Array<Category>>;
-  /** Matches if the field array contains *all* items provided to the filter */
-  category_contains_all?: InputMaybe<Array<Category>>;
-  /** Matches if the field array does not contain any of the items provided to the filter */
-  category_contains_none?: InputMaybe<Array<Category>>;
-  /** Matches if the field array contains at least one item provided to the filter */
-  category_contains_some?: InputMaybe<Array<Category>>;
-  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
-  category_not?: InputMaybe<Array<Category>>;
+  category?: InputMaybe<Category>;
+  /** All values that are contained in given list. */
+  category_in?: InputMaybe<Array<InputMaybe<Category>>>;
+  /** All values that are not equal to given value. */
+  category_not?: InputMaybe<Category>;
+  /** All values that are not contained in given list. */
+  category_not_in?: InputMaybe<Array<InputMaybe<Category>>>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -1575,7 +1583,7 @@ export enum ProductOrderByInput {
 }
 
 export type ProductUpdateInput = {
-  category?: InputMaybe<Array<Category>>;
+  category?: InputMaybe<Category>;
   imageOfProduct?: InputMaybe<AssetUpdateManyInlineInput>;
   subtitle?: InputMaybe<Scalars['String']>;
   title?: InputMaybe<Scalars['String']>;
@@ -1600,7 +1608,7 @@ export type ProductUpdateManyInlineInput = {
 };
 
 export type ProductUpdateManyInput = {
-  category?: InputMaybe<Array<Category>>;
+  category?: InputMaybe<Category>;
   subtitle?: InputMaybe<Scalars['String']>;
   title?: InputMaybe<Scalars['String']>;
   weight?: InputMaybe<Scalars['String']>;
@@ -1665,16 +1673,13 @@ export type ProductWhereInput = {
   OR?: InputMaybe<Array<ProductWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
-  /** Matches if the field array contains *all* items provided to the filter and order does match */
-  category?: InputMaybe<Array<Category>>;
-  /** Matches if the field array contains *all* items provided to the filter */
-  category_contains_all?: InputMaybe<Array<Category>>;
-  /** Matches if the field array does not contain any of the items provided to the filter */
-  category_contains_none?: InputMaybe<Array<Category>>;
-  /** Matches if the field array contains at least one item provided to the filter */
-  category_contains_some?: InputMaybe<Array<Category>>;
-  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
-  category_not?: InputMaybe<Array<Category>>;
+  category?: InputMaybe<Category>;
+  /** All values that are contained in given list. */
+  category_in?: InputMaybe<Array<InputMaybe<Category>>>;
+  /** All values that are not equal to given value. */
+  category_not?: InputMaybe<Category>;
+  /** All values that are not contained in given list. */
+  category_not_in?: InputMaybe<Array<InputMaybe<Category>>>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -1826,6 +1831,173 @@ export type ProductWhereStageInput = {
 
 /** References Product record uniquely */
 export type ProductWhereUniqueInput = {
+  id?: InputMaybe<Scalars['ID']>;
+};
+
+export type ProductsInput = {
+  __typename?: 'ProductsInput';
+  /** The unique identifier */
+  id: Scalars['ID'];
+  /** System stage field */
+  stage: Stage;
+};
+
+/** A connection to a list of items. */
+export type ProductsInputConnection = {
+  __typename?: 'ProductsInputConnection';
+  aggregate: Aggregate;
+  /** A list of edges. */
+  edges: Array<ProductsInputEdge>;
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+};
+
+export type ProductsInputCreateInput = {
+  /** No fields in create input */
+  _?: InputMaybe<Scalars['String']>;
+};
+
+export type ProductsInputCreateWithPositionInput = {
+  /** Document to create */
+  data: ProductsInputCreateInput;
+  /** Position in the list of existing component instances, will default to appending at the end of list */
+  position?: InputMaybe<ConnectPositionInput>;
+};
+
+/** An edge in a connection. */
+export type ProductsInputEdge = {
+  __typename?: 'ProductsInputEdge';
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String'];
+  /** The item at the end of the edge. */
+  node: ProductsInput;
+};
+
+/** Identifies documents */
+export type ProductsInputManyWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<ProductsInputWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<ProductsInputWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<ProductsInputWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['ID']>;
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']>;
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** All values that are not equal to given value. */
+  id_not?: InputMaybe<Scalars['ID']>;
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']>;
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']>;
+};
+
+export enum ProductsInputOrderByInput {
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC'
+}
+
+export type ProductsInputUpdateInput = {
+  /** No fields in update input */
+  _?: InputMaybe<Scalars['String']>;
+};
+
+export type ProductsInputUpdateManyInput = {
+  /** No fields in updateMany data input */
+  _?: InputMaybe<Scalars['String']>;
+};
+
+export type ProductsInputUpdateManyWithNestedWhereInput = {
+  /** Update many input */
+  data: ProductsInputUpdateManyInput;
+  /** Document search */
+  where: ProductsInputWhereInput;
+};
+
+export type ProductsInputUpdateWithNestedWhereUniqueAndPositionInput = {
+  /** Document to update */
+  data?: InputMaybe<ProductsInputUpdateInput>;
+  /** Position in the list of existing component instances, will default to appending at the end of list */
+  position?: InputMaybe<ConnectPositionInput>;
+  /** Unique component instance search */
+  where: ProductsInputWhereUniqueInput;
+};
+
+export type ProductsInputUpdateWithNestedWhereUniqueInput = {
+  /** Document to update */
+  data: ProductsInputUpdateInput;
+  /** Unique document search */
+  where: ProductsInputWhereUniqueInput;
+};
+
+export type ProductsInputUpsertInput = {
+  /** Create document if it didn't exist */
+  create: ProductsInputCreateInput;
+  /** Update document if it exists */
+  update: ProductsInputUpdateInput;
+};
+
+export type ProductsInputUpsertWithNestedWhereUniqueAndPositionInput = {
+  /** Document to upsert */
+  data?: InputMaybe<ProductsInputUpsertInput>;
+  /** Position in the list of existing component instances, will default to appending at the end of list */
+  position?: InputMaybe<ConnectPositionInput>;
+  /** Unique component instance search */
+  where: ProductsInputWhereUniqueInput;
+};
+
+export type ProductsInputUpsertWithNestedWhereUniqueInput = {
+  /** Upsert data */
+  data: ProductsInputUpsertInput;
+  /** Unique document search */
+  where: ProductsInputWhereUniqueInput;
+};
+
+/** Identifies documents */
+export type ProductsInputWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<ProductsInputWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<ProductsInputWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<ProductsInputWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['ID']>;
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']>;
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** All values that are not equal to given value. */
+  id_not?: InputMaybe<Scalars['ID']>;
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']>;
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']>;
+};
+
+/** References ProductsInput record uniquely */
+export type ProductsInputWhereUniqueInput = {
   id?: InputMaybe<Scalars['ID']>;
 };
 
@@ -2128,6 +2300,7 @@ export type ScheduledOperationAffectedDocumentsArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   last?: InputMaybe<Scalars['Int']>;
   locales?: InputMaybe<Array<Locale>>;
   skip?: InputMaybe<Scalars['Int']>;
@@ -2136,6 +2309,7 @@ export type ScheduledOperationAffectedDocumentsArgs = {
 
 /** Scheduled Operation system model */
 export type ScheduledOperationCreatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -2150,18 +2324,21 @@ export type ScheduledOperationDocumentInStagesArgs = {
 
 /** Scheduled Operation system model */
 export type ScheduledOperationPublishedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
 
 /** Scheduled Operation system model */
 export type ScheduledOperationReleaseArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
 
 /** Scheduled Operation system model */
 export type ScheduledOperationUpdatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -2542,6 +2719,7 @@ export type ScheduledRelease = Node & {
 
 /** Scheduled Release system model */
 export type ScheduledReleaseCreatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -2559,6 +2737,7 @@ export type ScheduledReleaseOperationsArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   last?: InputMaybe<Scalars['Int']>;
   locales?: InputMaybe<Array<Locale>>;
   orderBy?: InputMaybe<ScheduledOperationOrderByInput>;
@@ -2569,12 +2748,14 @@ export type ScheduledReleaseOperationsArgs = {
 
 /** Scheduled Release system model */
 export type ScheduledReleasePublishedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
 
 /** Scheduled Release system model */
 export type ScheduledReleaseUpdatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -3584,12 +3765,12 @@ export enum _SystemDateTimeFieldVariation {
 export type GetProductsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetProductsQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', title: string, subtitle?: string | null, weight: string, category: Array<Category>, imageOfProduct: Array<{ __typename?: 'Asset', url: string, id: string }> }> };
+export type GetProductsQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', title: string, subtitle?: string | null, weight: string, category?: Category | null, imageOfProduct: Array<{ __typename?: 'Asset', url: string, id: string }> }> };
 
 
 export const GetProductsDocument = gql`
     query GetProducts {
-  products {
+  products(last: 100) {
     title
     subtitle
     weight

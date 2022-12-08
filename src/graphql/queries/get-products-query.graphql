@@ -1,5 +1,5 @@
 query GetProducts {
-  products{
+  products(last: 100) {
     title
     subtitle
     weight
