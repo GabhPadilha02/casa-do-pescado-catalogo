@@ -108,11 +108,6 @@ export const Pics = styled.div`
   transition: all 0.2s ease;
   cursor: pointer;
   margin-bottom: 12px;
-  position: static;
-
-  &:hover {
-    filter: opacity(0.9);
-  }
 
   img {
     height: 140px;
