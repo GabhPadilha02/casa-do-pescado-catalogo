@@ -35,6 +35,10 @@ export const ProductItem = styled.div`
     width: 180px;
     height: 350px;
   }
+  @media (max-width: 380px) {
+    width: 150px;
+    height: 350px;
+  }
 `
 
 export const ProductInfosContainer = styled.div`
@@ -111,12 +115,18 @@ export const Pics = styled.div`
 
   img {
     height: 140px;
-    max-width: 150px;
+    max-width: 130px;
     /* object-fit: cover; */
 
     @media (max-width: 700px) {
       img {
         height: 50px;
+      }
+    }
+    @media (max-width: 400px) {
+      img {
+        height: 50px;
+        max-width: 130px;
       }
     }
   }
@@ -144,7 +154,6 @@ export const Model = styled.div`
     padding: 20px 0 20px;
     margin: 0 auto;
     max-height: 70vh;
-    max-width: 90vw;
   }
 `
 
@@ -153,8 +162,8 @@ export const ModelOpen = styled.div`
   position: fixed;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   visibility: visible;
   opacity: 1;
@@ -163,7 +172,8 @@ export const ModelOpen = styled.div`
   left: 0;
 
   img {
-    max-height: 80vh;
+    max-height: 90vh;
+    max-width: 90vw;
   }
 
   svg {
