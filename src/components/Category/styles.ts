@@ -34,7 +34,7 @@ export const CategoryContainer = styled.div`
   }
   @media (max-width: 850px) {
     form {
-      gap: 4vw;
+      gap: 1vw;
       padding: 10px 50px;
     }
   }
@@ -89,14 +89,15 @@ export const RadioContainer = styled.div`
     border-bottom: 3px solid #1b5785;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
+    width: 15vw;
     img {
-      width: 50px;
+      width: 40px;
     }
     label {
-      width: 50px;
+      width: 15vw;
       span {
-        font-size: 0.875rem;
+        font-size: 0.575rem;
       }
     }
   }

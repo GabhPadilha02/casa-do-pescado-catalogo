@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 
 export const ProductContainer = styled.div`
-  margin-top: 6rem;
+  margin-top: 3rem;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: center;
   padding: 3rem;
-  gap: 3rem;
+  gap: 2rem;
 
   @media (max-width: 700px) {
-    margin-top: 6rem;
-    gap: 5rem 1rem;
+    margin-top: 2rem;
+    gap: 0rem 1rem;
     padding: 0;
   }
 `
