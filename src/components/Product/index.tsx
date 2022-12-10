@@ -6,6 +6,7 @@ import {
   Model,
   ModelOpen,
   Pics,
+  PicsContainer,
   ProductContainer,
   ProductInfosContainer,
   ProductItem,
@@ -42,9 +43,11 @@ export function Product() {
           <ProductItem key={a.title}>
             <ProductInfosContainer>
               {a.imageOfProduct.map((i: any) => (
-                <Pics key={i.url} onClick={() => getImg(i.url)}>
-                  <img src={i.url} key={i.url} alt="" />
-                </Pics>
+                <PicsContainer key={i.url}>
+                  <Pics onClick={() => getImg(i.url)}>
+                    <img src={i.url} key={i.url} alt="" />
+                  </Pics>
+                </PicsContainer>
               ))}
               <TextContainer>
                 <h2 key={a.title}>{a.title}</h2>

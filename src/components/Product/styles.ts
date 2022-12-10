@@ -104,6 +104,14 @@ export const WeightProduct = styled.span`
     font-size: 1rem;
   }
 `
+export const PicsContainer = styled.div`
+  height: 140px;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
 export const Pics = styled.div`
   display: flex;
   align-items: center;
@@ -114,9 +122,8 @@ export const Pics = styled.div`
   margin-bottom: 12px;
 
   img {
-    height: 140px;
+    max-height: 140px;
     max-width: 130px;
-    /* object-fit: cover; */
 
     @media (max-width: 700px) {
       img {
