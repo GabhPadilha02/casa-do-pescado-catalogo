@@ -17,7 +17,7 @@ export const CategoryContainer = styled.div`
     margin-top: 50px;
     display: flex;
     justify-content: center;
-    gap: 150px;
+    gap: 3rem;
     align-items: flex-end;
   }
   @media (max-width: 700px) {
@@ -34,13 +34,13 @@ export const CategoryContainer = styled.div`
   }
   @media (max-width: 850px) {
     form {
-      gap: 5vw;
+      gap: 4vw;
       padding: 10px 50px;
     }
   }
   @media (max-width: 400px) {
     form {
-      gap: 1vw;
+      gap: 0.5vw;
     }
   }
 `
@@ -69,7 +69,7 @@ export const RadioContainer = styled.div`
   }
 
   height: 130px;
-  width: 100px;
+  width: 140px;
   position: relative;
 
   display: flex;

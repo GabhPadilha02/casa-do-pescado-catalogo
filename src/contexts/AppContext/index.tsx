@@ -82,6 +82,12 @@ export function AppContextProvider({ children }: MyProviderProps) {
       )
     }
 
+    if (categoryOption === 'seaFood') {
+      return setFilteredProducts(
+        newProducts.filter((product) => product.category === 'FrutosDoMar'),
+      )
+    }
+
     return setFilteredProducts(newFilteredProducts)
   }
 
