@@ -55,7 +55,7 @@ export function Header() {
             rel="noreferrer"
           >
             <li>
-              <FacebookLogo size={30} weight={'regular'} />
+              <FacebookLogo size={30} weight={'regular'} alt="Facebook" />
             </li>
           </a>
           <a
@@ -64,7 +64,7 @@ export function Header() {
             rel="noreferrer"
           >
             <li>
-              <InstagramLogo size={30} weight={'regular'} />
+              <InstagramLogo size={30} weight={'regular'} alt="Instagram" />
             </li>
           </a>
         </IconsContainer>
